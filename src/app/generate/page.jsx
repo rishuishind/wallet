@@ -150,8 +150,8 @@ const page = () => {
       <div className="bg-black h-screen p-3">
         {showPopup && balance && (
           <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center">
-            <div className="bg-white p-6 rounded-lg">
-              <h2 className="text-xl font-bold">Balance Details</h2>
+            <div className="bg-white p-6 rounded-lg w-full">
+              <h2 className="lg:text-xl font-bold">Balance Details</h2>
               <p>Address: {selectedKey || customAddress}</p>
               {balance.wei !== undefined && (
                 <>
@@ -255,7 +255,7 @@ const page = () => {
               <span className="text-white text-2xl font-semibold">
                 Seed Phrase
               </span>
-              <div className="">
+              <div className="flex flex-wrap gap-2">
                 {mnemonic.split(" ").map((word, index) => (
                   <span
                     key={index}
@@ -274,7 +274,7 @@ const page = () => {
                   Wallets
                 </span>
                 <span className="flex justify-center">Solana Wallets</span>
-                <div className="flex flex-wrap justify-center gap-3">
+                <div className="flex flex-wrap justify-center gap-3 text-xs">
                   {solPublicKeys.map((key, index) => (
                     <span
                       key={index}
@@ -288,7 +288,7 @@ const page = () => {
                   ))}
                 </div>
                 <span className="flex justify-center">Ethereum Wallets</span>
-                <div className="flex flex-wrap justify-center gap-3">
+                <div className="flex flex-wrap justify-center gap-3 text-xs">
                   {ethPublicKeys.map((key, index) => (
                     <span
                       key={index}
